@@ -27,7 +27,10 @@ export class UserDeletePage implements OnInit {
     this.usersService.deleteUser(id).subscribe(
       (response:any)=>{
         if(response.success == true){
-          this.router.navigate(['/users']);
+          this.router.navigate(['/users'])
+          .then(() => {
+            window.location.reload();
+          });
         }
       }
     );

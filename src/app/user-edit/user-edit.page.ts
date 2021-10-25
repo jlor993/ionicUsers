@@ -41,7 +41,10 @@ export class UserEditPage implements OnInit {
     }
 
     if(response.success===true){
-      this.router.navigate(['/users']);
+      this.router.navigate(['/users'])
+      .then(() => {
+        window.location.reload();
+      });
     }
   }
 
